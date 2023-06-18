@@ -1,0 +1,32 @@
+.container {
+    margin-top: 20px;
+  }
+  
+  h2{
+    text-align: center;
+    text-decoration: underline;
+    background-color: #fd682d5a;
+    border-radius: 10% / 10%;
+    box-shadow: 10px 10px 5px #fd682d5a; 
+}
+  .text-right {
+    text-align: right;
+  }
+marquee{
+  background-color: #00ffff80;
+  color: rgb(0, 0, 0);
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px #00ffff80; 
+
+
+}
+marquee:hover{
+  background-color: rgb(64, 255, 0);
+  border-radius: 10px;
+}
+
+@media (max-width: 500px) {
+  marquee {
+    font-size: 14px;
+  }
+}

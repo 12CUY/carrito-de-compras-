@@ -1,0 +1,37 @@
+<div class="container">
+    <h2>Carrito de Compras</h2>
+    <hr>
+    <br>
+    <div *ngIf="productos.length > 0; else carritoVacio">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let producto of productos; let i = index">
+            <td>{{ producto.nombre }}</td>
+            <td>{{ producto.precio | currency }}</td>
+            <td>
+              <button class="btn btn-danger btn-sm" (click)="eliminarProducto(i)">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="text-right">
+        <h4>Total: {{ calcularTotal() | currency }}</h4>
+        <button class="btn btn-primary" (click)="realizarPago()">Realizar Pago</button>
+      </div>
+      <div *ngIf="mostrarPago" class="alert alert-success mt-3">
+        <h4>Total de la compra:</h4>
+        <p>{{ calcularTotal() | currency }}</p>
+      </div>
+    </div>
+    <ng-template #carritoVacio>
+      <marquee behavior="alternate">No hay productos en el carrito.</marquee>
+    </ng-template>
+  </div>
+  

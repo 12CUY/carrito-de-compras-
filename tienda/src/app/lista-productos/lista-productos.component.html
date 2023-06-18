@@ -1,0 +1,18 @@
+<div class="container">
+    <h2>Lista de Peliculas</h2>
+<hr>
+    <div class="row">
+      <div class="col-md-4" *ngFor="let producto of productos">
+        <div class="card mb-4">
+          <img class="card-img-top" [src]="producto.imagen" alt="Imagen del producto">
+          <div class="card-body">
+            <h5 class="card-title">{{ producto.nombre }}</h5>
+            <p class="card-text"><strong>Precio:</strong> {{ producto.precio | currency }}</p>
+            <p><strong>Descripcion</strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis veniam a temporibus officia quas hic modi labore fugit consequatur maxime, perspiciatis porro laudantium aperiam atque animi accusamus cupiditate reiciendis optio.</p>
+            <button class="btn btn-primary" (click)="agregarAlCarrito(producto)">Agregar al carrito</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
