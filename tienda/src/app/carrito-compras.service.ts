@@ -4,9 +4,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CarritoComprasService {
-  productos: any[] = [];
+  productos: any[] = []; // Array para almacenar los productos
 
   agregarProducto(producto: any): void {
-    this.productos.push(producto);
+    this.productos.push(producto); // Agrega un producto al array de productos
   }
 }
