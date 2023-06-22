@@ -1,37 +1,73 @@
 <div class="container">
-    <h2>Carrito de Compras</h2>
-    <hr>
-    <br>
-    <div *ngIf="productos.length > 0; else carritoVacio">
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Producto</th>
-            <th>Precio</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let producto of productos; let i = index">
-            <td>{{ producto.nombre }}</td>
-            <td>{{ producto.precio | currency }}</td><!-- Muestra el precio del producto formateado como moneda -->
-            <td>
-              <button class="btn btn-danger btn-sm" (click)="eliminarProducto(i)">Eliminar</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="text-right">
-        <h4>Total: {{ calcularTotal() | currency }}</h4>
-        <button class="btn btn-primary" (click)="realizarPago()">Realizar Pago</button>
-      </div>
-      <div *ngIf="mostrarPago" class="alert alert-success mt-3">
-        <h4>Total de la compra:</h4>
-        <p>{{ calcularTotal() | currency }}</p>
-      </div>
+  <h2>Carrito de Compras</h2>
+  <hr>
+  <br>
+  <div *ngIf="productos.length > 0; else carritoVacio">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Precio</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let producto of productos; let i = index">
+          <td>{{ producto.nombre }}</td>
+          <td>{{ producto.precio | currency }}</td>
+          <td>
+            <button class="btn btn-danger btn-sm" (click)="eliminarProducto(i)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="text-right">
+      <h4>Total: {{ calcularTotal() | currency }}</h4>
+      <button class="btn btn-primary" (click)="realizarPago()">Realizar Pago</button>
     </div>
-    <ng-template #carritoVacio>
-      <marquee behavior="alternate">No hay productos en el carrito.</marquee>
-    </ng-template>
+    <div *ngIf="mostrarPago" class="alert alert-success mt-3">
+      <h4>Total de la compra:</h4>
+      <p>{{ calcularTotal() | currency }}</p>
+    </div>
+
+    <!-- Formulario para introducir los datos de la persona -->
+    <h3>Introduce tus datos:</h3>
+    <form (submit)="agregarPersona()">
+      <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="persona.nombre" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" name="email" [(ngModel)]="persona.email" required>
+      </div>
+      <div class="form-group">
+        <label for="telefono">Teléfono:</label>
+        <input type="text" class="form-control" id="telefono" name="telefono" [(ngModel)]="persona.telefono" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Agregar</button>
+    </form>
+
+    <!-- Mensaje de éxito -->
+    <div *ngIf="mensajeExito" class="alert alert-success mt-3">
+      {{ mensajeExito }}
+    </div>
+
+    <!-- Mensaje de error -->
+    <div *ngIf="mensajeError" class="alert alert-danger mt-3">
+      {{ mensajeError }}
+    </div>
+
+    <!-- Detalles de la factura -->
+    <div *ngIf="factura" class="alert alert-info mt-3">
+      <h4>Detalles de la factura:</h4>
+      <p>Nombre: {{ factura.persona.nombre }}</p>
+      <p>Email: {{ factura.persona.email }}</p>
+      <p>Teléfono: {{ factura.persona.telefono }}</p>
+      <p>Total: {{ factura.total | currency }}</p>
+    </div>
   </div>
-  
+  <ng-template #carritoVacio>
+    <marquee behavior="alternate">No hay productos en el carrito.</marquee>
+  </ng-template>
+</div>

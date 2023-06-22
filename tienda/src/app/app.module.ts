@@ -6,6 +6,7 @@ import { CarritoComprasComponent } from './carrito-compras/carrito-compras.compo
 import { AppRoutingModule } from './app-routing.module';
 import { ListaProductosComponent } from './lista-productos/lista-productos.component';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { RouterModule } from '@angular/router';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    FormsModule
    
   ],
   providers: [],
