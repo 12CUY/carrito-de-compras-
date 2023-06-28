@@ -50,11 +50,10 @@ export class CarritoComprasComponent {
     // Validar los campos del formulario
     if (this.persona.nombre && this.persona.email && this.persona.telefono) {
       // Realizar la acción correspondiente con los datos de la persona (ejemplo: guardar en una base de datos)
-      // Aquí puedes agregar tu lógica personalizada
 
       // Mostrar mensaje de éxito
       this.mensajeExito = 'Los datos de la persona se han agregado correctamente.';
-      
+
       // Limpiar los campos del formulario
       this.persona = {
         nombre: '',

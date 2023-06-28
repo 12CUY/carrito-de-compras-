@@ -1,0 +1,59 @@
+nav {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .menu-icon {
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .menu {
+    list-style-type: none;
+    display: flex;
+  }
+  
+  .menu li {
+    margin-left: 20px;
+  }
+  
+  .menu li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .open {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Estilos adicionales para dispositivos móviles */
+  @media only screen and (max-width: 600px) {
+    .menu {
+      flex-direction: column;
+      display: none;
+    }
+  
+    .open {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .menu-icon {
+      display: block;
+    }
+  
+    .menu-icon.close {
+      display: none;
+    }
+  
+    .menu li {
+      margin-left: 0;
+      margin-bottom: 10px;
+    }
+  }
+  
