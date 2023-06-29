@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CarritoComprasService } from '../carrito-compras.service';
 
+
 @Component({
   selector: 'app-lista-productos',
   templateUrl: './lista-productos.component.html',
