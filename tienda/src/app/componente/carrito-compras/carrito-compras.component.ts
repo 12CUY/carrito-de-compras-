@@ -43,6 +43,8 @@ export class CarritoComprasComponent {
     };
 
     this.mostrarPago = true; // Mostrar la sección de pago
+
+    this.carritoService.guardarCarritoEnBackend(); // Guardar el carrito en el backend
   }
 
   // Método para agregar los datos de la persona
@@ -63,6 +65,8 @@ export class CarritoComprasComponent {
 
       // Limpiar mensaje de error, si existía
       this.mensajeError = null;
+
+      this.carritoService.guardarCarritoEnBackend(); // Guardar el carrito en el backend
     } else {
       // Mostrar mensaje de error si algún campo está vacío
       this.mensajeError = 'Por favor, completa todos los campos del formulario.';

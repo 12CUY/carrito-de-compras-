@@ -34,7 +34,8 @@ import { SideMenuComponent } from './componente/side-menu/side-menu.component';
     RouterModule,
     CommonModule,
     AppRoutingModule,
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]

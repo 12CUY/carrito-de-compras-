@@ -9,8 +9,8 @@ export class SideMenuComponent {
   // Definir los enlaces del menú
   menuItems = [
     { title: 'Inicio', icon: 'home', link: '/inicio' },
-    { title: 'Notificaciones', icon: 'bell', link: '/notifications' },
-    { title: 'Mensajes', icon: 'message', link: '/messages' },
+    { title: 'Caja', icon: 'bell', link: '/carrito-compras' },
+    { title: 'Platos', icon: 'message',  link: '/lista-productos'},
     // Agrega más enlaces según sea necesario
   ];
 }
