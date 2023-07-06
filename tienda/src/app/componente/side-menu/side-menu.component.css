@@ -1,0 +1,39 @@
+.side-menu {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 130px;
+    background-color: #70a6f8;
+    padding: 20px;
+    z-index: 500; /* Ajusta el valor del z-index según sea necesario */
+    border-radius: 20px 1px 2px 20px;
+
+  }
+  
+  .side-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .side-menu li {
+    margin-bottom: 10px;
+  }
+  
+  .side-menu a {
+    display: flex;
+    align-items: center;
+    color: #000;
+    text-decoration: none;
+  }
+
+  .side-menu:hover{
+    color: aqua;
+    text-decoration: underline;
+  }
+  
+  .side-menu i {
+    margin-right: 10px;
+  }
+  

@@ -6,22 +6,26 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 import { AppComponent } from './app.component';
-import { CarritoComprasComponent } from './carrito-compras/carrito-compras.component';
+import { CarritoComprasComponent } from './componente/carrito-compras/carrito-compras.component';
 import { AppRoutingModule } from './app-routing.module';
-import { ListaProductosComponent } from './lista-productos/lista-productos.component';
-import { InicioComponent } from './inicio/inicio.component';
+import { ListaProductosComponent } from './componente/lista-productos/lista-productos.component';
 import { ApiService } from './services/api.service';
-import { CustomPipe } from './pipes/custom.pipe';
+import { TruncatePipe } from './pipes/truncate.pipe';
 import { CustomDirective } from './directives/custom.directive';
+import { InicioComponent } from './componente/inicio/inicio.component';
+import { FooeterComponent } from './componente/fooeter/fooeter.component';
+import { SideMenuComponent } from './componente/side-menu/side-menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CarritoComprasComponent,
     ListaProductosComponent,
+    TruncatePipe,
+    CustomDirective,
     InicioComponent,
-    CustomPipe,
-    CustomDirective
+    FooeterComponent,
+    SideMenuComponent
   ],
   imports: [
     BrowserModule,
